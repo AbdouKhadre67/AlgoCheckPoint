@@ -1,0 +1,32 @@
+ALGORITHM algorithm_countCaratere
+VAR
+    a: CHAR;
+    x: STRING
+    long, voyelles, mots: INTEGER
+BEGIN
+    a := ""         
+    long := 0        
+    voyelles := 0    
+    mots := 1        
+
+    REPEAT
+        READ(a)      
+        long := long + 1    
+
+        IF((a = 'a') OR (a = 'e') OR (a = 'i') OR (a = 'o') OR (a = 'u') OR
+           (a = 'A') OR (a = 'E') OR (a = 'I') OR (a = 'O') OR (a = 'U')) THEN
+            voyelles := voyelles + 1
+        END IF
+
+        IF a = ' ' THEN
+            mots := mots + 1
+        END IF
+
+    UNTIL a = '.'   
+
+    WRITE("Nombre de caractères: ", long)
+    WRITE("Nombre de mots: ", mots)
+    WRITE("Nombre de voyelles: ", voyelles)
+END
+
+
